@@ -1,0 +1,39 @@
+<div class="aws-s3-upload" style="padding: 20px;">
+  <div class="header-upload">
+    <div class="title-upload">
+      <span>Upload Files</span>
+    </div>
+  </div>
+
+  <div class="mng-drap-drop-folder">
+    <ngx-file-drop dropZoneLabel="Drag and drop files od folders"
+                   (onFileDrop)="dropped($event)"
+                   (onFileOver)="fileOver($event)"
+                   (onFileLeave)="fileLeave($event)">
+      <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+        <div class="upload-hint text-center" *ngIf="!files.length">
+          <div>
+            <i class="fa fa-camera" aria-hidden="true"></i>
+          </div>
+          <div>
+            <span class="title-hint">Drag and drop files od folders</span>
+          </div>
+        </div>
+
+        <div class="file-list" *ngIf="files.length">
+          <div class="wrapper-grid">
+
+            <ng-container *ngFor="let item of listFilesToUpload; let i = index">
+              <div>
+                <app-item-upload
+                  [data]="item"
+                ></app-item-upload>
+              </div>
+            </ng-container>
+
+          </div>
+        </div>
+      </ng-template>
+    </ngx-file-drop>
+  </div>
+</div>

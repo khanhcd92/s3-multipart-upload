@@ -1,0 +1,9 @@
+{
+    "name": "s3-multipart-upload",
+    "description": "",
+    "version": "0.1.0",
+    "devDependencies": {
+        "serverless-python-requirements": "^5.1.1",
+        "serverless-wsgi": "^2.0.1"
+    }
+}
